@@ -1,0 +1,25 @@
+@import "mixins";
+@import "colors";
+@import "functions";
+@import "pixelmaps";
+
+$squareSize: 10px;
+
+.mario-holder{
+
+  width: $squareSize*8;
+  height: $squareSize*12;
+  position:absolute;
+
+}
+
+.mario{
+
+  width: $squareSize;
+  height: $squareSize;
+  background-color: rgba(0,0,0,0.0);
+
+  &.framezero{
+    @include box-shadow(generate-pixelart($squareSize,$frameZero))
+  }
+}

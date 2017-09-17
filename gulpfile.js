@@ -3,12 +3,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('styles', function () {
-  gulp.src('./style.scss')
+  gulp.src('./scss/style.scss')
     .pipe(sass())    
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./css'))
 });
 
 gulp.task('watch', function() {
    // Watch .scss files
-  gulp.watch('./style.scss', ['styles']);
+  gulp.watch('./scss/*.scss', ['styles']);
  });

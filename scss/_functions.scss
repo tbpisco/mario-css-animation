@@ -1,0 +1,18 @@
+@function generate-pixelart($squareSize, $colorpixelmap){
+	$boxshadowvalues: null;
+	$colorIndex: 0;
+	$lineIndex: 0;
+
+	@each $shadow-key, $shadow-value in $colorpixelmap {
+	  @each $color-key, $color-value in $shadow-value {	  	
+	    @if $color-key != undefined {
+	    	$boxshadowvalues: $boxshadowvalues, $colorIndex*$squareSize $lineIndex*$squareSize 0 $color-key;
+	    } 
+	    $colorIndex: $colorIndex + 1;
+	  }
+	  $colorIndex: 0;
+	  $lineIndex: $lineIndex + 1;
+	}
+
+  @return $boxshadowvalues;
+}
