@@ -19,7 +19,12 @@ $squareSize: 10px;
   height: $squareSize;
   background-color: rgba(0,0,0,0.0);
 
+  &.frametwo,
   &.framezero{
     @include box-shadow(generate-pixelart($squareSize,$frameZero))
+  }
+
+  &.frameone{
+    @include box-shadow(generate-pixelart($squareSize,$frameOne))
   }
 }
