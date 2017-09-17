@@ -11,6 +11,8 @@ $squareSize: 10px;
   height: $squareSize*12;
   position:absolute;
 
+  /* animation : moveForward 5s linear infinite alternate;*/
+
 }
 
 .mario{
@@ -26,5 +28,39 @@ $squareSize: 10px;
 
   &.frameone{
     @include box-shadow(generate-pixelart($squareSize,$frameOne))
+  }
+
+  &.framethree{
+    @include box-shadow(generate-pixelart($squareSize,$frameThree))
+  }
+}
+
+@keyframes moveForward {
+  0% {
+    transform: scaleX(1) translateX(0%);
+  }
+
+ 100% {
+    transform: scaleX(1) translateX(400px);
+  }
+}
+
+@keyframes flipMove {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(-1);
+  }
+}
+
+@keyframes moveBackward {
+  0% {
+    transform: scaleX(-1) translateX(-400px);
+  }
+
+  100% {
+    transform: scaleX(-1) translateX(0px);
   }
 }
