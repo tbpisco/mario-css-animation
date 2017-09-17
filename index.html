@@ -12,6 +12,50 @@
 </body>
 <script type="text/javascript">
 
+(function(global) {
+
+	window.addEventListener("DOMContentLoaded", startApp);
+	function startApp() {
+
+		var app = new MarioAnimation();
+		window.removeEventListener("DOMContentLoaded", startApp);
+	}
+
+})(window);
+
+
+MarioAnimation = (function() {
+
+	var self;
+
+	var state = 0;
+	var fps = 6;
+
+    function MarioAnimation(){
+    	self = this;
+    	setTimeout(changeClass, 1000/fps);
+    }
+
+	var changeClass = function(){
+			state++;
+			state = state % 4;
+			if(state == 0){
+				document.getElementsByClassName("mario")[0].className = "mario framezero"
+			} else if(state == 1){
+				document.getElementsByClassName("mario")[0].className = "mario frameone"
+			} else if(state == 2){
+				document.getElementsByClassName("mario")[0].className = "mario framethree"
+			} else {
+				document.getElementsByClassName("mario")[0].className = "mario frameone"
+			}
+
+			setTimeout(changeClass, 1000/fps);
+	}
+
+	return MarioAnimation;
+
+})(window);
+		
 
 		
 </script>

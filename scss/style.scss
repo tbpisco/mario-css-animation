@@ -3,12 +3,12 @@
 @import "functions";
 @import "pixelmaps";
 
-$squareSize: 10px;
+$squareSize: 5px;
 
 .mario-holder{
 
-  width: $squareSize*8;
-  height: $squareSize*12;
+  width: $squareSize*16;
+  height: $squareSize*29;
   position:absolute;
 
   /* animation : moveForward 5s linear infinite alternate;*/
