@@ -1,0 +1,14 @@
+{
+  "name": "MARIO-CSS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+  },
+  "author": "Thatiane Pisco",
+  "license": "",
+  "devDependencies": {  
+    "gulp": "^3.9.1",   
+    "gulp-sass": "^3.1.0"
+  }
+}
